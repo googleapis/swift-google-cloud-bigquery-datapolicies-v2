@@ -26,19 +26,19 @@ extension Clients {
   protocol DataPolicyServiceStub {
     func createDataPolicy(
       request: CreateDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy
 
     func addGrantees(
       request: AddGranteesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy
 
     func removeGrantees(
       request: RemoveGranteesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy
 
     func updateDataPolicy(
       request: UpdateDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy
 
     func deleteDataPolicy(
       request: DeleteDataPolicyRequest, options: GoogleCloudGax.RequestOptions
@@ -46,11 +46,11 @@ extension Clients {
 
     func getDataPolicy(
       request: GetDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy
 
     func listDataPolicies(
       request: ListDataPoliciesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.ListDataPoliciesResponse
+    ) async throws -> GoogleBigQueryDataPoliciesV2.ListDataPoliciesResponse
 
     func getIamPolicy(
       request: GoogleIAMV1.GetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
@@ -75,7 +75,7 @@ extension Clients {
 
     public func createDataPolicy(
       request: CreateDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -92,12 +92,12 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.DataPolicy.self, from: data)
+        GoogleBigQueryDataPoliciesV2.DataPolicy.self, from: data)
     }
 
     public func addGrantees(
       request: AddGranteesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.dataPolicy as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.data_policy' is not set or is empty")
@@ -114,12 +114,12 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.DataPolicy.self, from: data)
+        GoogleBigQueryDataPoliciesV2.DataPolicy.self, from: data)
     }
 
     public func removeGrantees(
       request: RemoveGranteesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.dataPolicy as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.data_policy' is not set or is empty")
@@ -136,12 +136,12 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.DataPolicy.self, from: data)
+        GoogleBigQueryDataPoliciesV2.DataPolicy.self, from: data)
     }
 
     public func updateDataPolicy(
       request: UpdateDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.dataPolicy.map({ $0.name }), !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding(
@@ -164,7 +164,7 @@ extension Clients {
       }
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.DataPolicy.self, from: data)
+        GoogleBigQueryDataPoliciesV2.DataPolicy.self, from: data)
     }
 
     public func deleteDataPolicy(
@@ -187,7 +187,7 @@ extension Clients {
 
     public func getDataPolicy(
       request: GetDataPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.DataPolicy {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.DataPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -202,12 +202,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.DataPolicy.self, from: data)
+        GoogleBigQueryDataPoliciesV2.DataPolicy.self, from: data)
     }
 
     public func listDataPolicies(
       request: ListDataPoliciesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryDatapoliciesV2.ListDataPoliciesResponse {
+    ) async throws -> GoogleBigQueryDataPoliciesV2.ListDataPoliciesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -226,7 +226,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryDatapoliciesV2.ListDataPoliciesResponse.self, from: data)
+        GoogleBigQueryDataPoliciesV2.ListDataPoliciesResponse.self, from: data)
     }
 
     public func getIamPolicy(
